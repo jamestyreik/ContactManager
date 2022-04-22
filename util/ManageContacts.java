@@ -21,7 +21,7 @@ public class ManageContacts {
     }
 
     public static void removeContact(HashMap<String, Contact> contactsMap) {
-        String key = getString("Which contact do you want to remove?");
+        String key = getString("Which contact do you want to remove?").toUpperCase();
         if (contactsMap.containsKey(key)) {
             contactsMap.remove(key);
             System.out.println(key + " contact has been removed!");
