@@ -1,5 +1,6 @@
 package app;
 
+import consoleOut.DisplayContact;
 import obj.Contact;
 import util.Input;
 
@@ -7,24 +8,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import static consoleOut.DisplayContact.displayContact;
+import static consoleOut.DisplayContact.*;
 import static consoleOut.Menu.displayMenu;
+import static util.Input.getString;
+import static util.ManageContacts.addContact;
 
 public class ContactManagerRunner {
     public static void main(String[] args) {
-//        displayMenu();
-        initContacts(getContacts());
+        //Assigns hardcoded HashMap from getContacts to HashMap testMap
+        HashMap<String, Contact> testMap = getContacts();
+        //Takes in testMap and displays all keys (firstName and lastName)
+        initContacts(testMap);
+        //Prompts user to enter firstName, lastName, and phoneNumber to create new Contact object (testContact)
+        Contact testContact = addContact();
+        //Takes testMap and adds the testContact just made by the user
+        testMap.put(testContact.getFirstName() + " " + testContact.getLastName(), testContact);
+        //Takes in testMap and displays all keys (firstName and lastName) including new user created contact
+        initContacts(testMap);
     }
 
-    private static void initContacts(HashMap<String, Contact> contactsMap) {
-        System.out.println("Users in memory: ");
-        System.out.println("\n");
-        for(String key : contactsMap.keySet()) {
-            System.out.println(key);
-        }
-    }
-
-    private static HashMap<String, Contact> getContacts() {
+    //Creates HashMap of Contacts as values and adds them with firstName and lastName as their keys
+    public static HashMap<String, Contact> getContacts() {
         Contact james = new Contact("James", "Woodward", "3185507510");
         Contact tyreik = new Contact("Tyreik", "Williams", "1111111111");
         Contact carl = new Contact("Carl", "Watergarbage", "5555555555");
