@@ -2,7 +2,6 @@ package consoleOut;
 
 import static util.Input.getInt;
 
-
 public class Menu {
 
     public static int displayMenu() {
@@ -11,9 +10,8 @@ public class Menu {
                 "3. Search a contact by name: \n" +
                 "4. Delete and existing contact  \n" +
                 "5. Exit!");
-        int userMenuChoice = getInt("Enter an option (1,2,3,4,5)");
 
-        return userMenuChoice;
+        return getInt("Enter an option (1,2,3,4,5)");
     }
 
 }
