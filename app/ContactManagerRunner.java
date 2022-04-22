@@ -1,17 +1,10 @@
 package app;
 
-import consoleOut.DisplayContact;
 import obj.Contact;
-import util.Input;
-
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-
 import static consoleOut.DisplayContact.*;
-import static consoleOut.Menu.displayMenu;
-import static util.Input.getString;
 import static util.ManageContacts.addContact;
+import static util.ManageContacts.removeContact;
 
 public class ContactManagerRunner {
     public static void main(String[] args) {
@@ -25,6 +18,11 @@ public class ContactManagerRunner {
         testMap.put(testContact.getFirstName() + " " + testContact.getLastName(), testContact);
         //Takes in testMap and displays all keys (firstName and lastName) including new user created contact
         initContacts(testMap);
+
+        removeContact(testMap);
+
+        initContacts(testMap);
+
     }
 
     //Creates HashMap of Contacts as values and adds them with firstName and lastName as their keys

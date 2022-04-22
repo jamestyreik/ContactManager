@@ -2,6 +2,8 @@ package util;
 
 import obj.Contact;
 
+import java.util.HashMap;
+
 import static util.Input.getString;
 
 public class ManageContacts {
@@ -17,4 +19,15 @@ public class ManageContacts {
 
         return new Contact(firstName, lastName, phoneNumber);
     }
+
+    public static void removeContact(HashMap<String, Contact> contactsMap) {
+        String key = getString("Which contact do you want to remove?");
+        if (contactsMap.containsKey(key)) {
+            contactsMap.remove(key);
+            System.out.println(key + " contact has been removed!");
+        } else {
+            System.out.println(key + " doesn't exist... Please try again");
+        }
+    }
+
 }
