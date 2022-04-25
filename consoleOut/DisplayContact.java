@@ -18,6 +18,7 @@ public class DisplayContact {
 
     //Formats individual Contact object for console display
     public static void displayContact(Contact contact) {
+        System.out.println("\n");
         try{
             System.out.println("Name: " + contact.getFirstName() + " " + contact.getLastName());
             System.out.println("Phone: " + contact.getPhoneNumber());
@@ -30,6 +31,7 @@ public class DisplayContact {
 
     //Searches HashMap of Contacts by key provided by user and returns Contact Object
     public static Contact searchUserContact(HashMap<String, Contact> contactsMap) {
+        System.out.println("\n");
         boolean userContinue;
         do {
             String contact = getString("Which contact would you like to view?").toUpperCase();
@@ -42,16 +44,15 @@ public class DisplayContact {
             }
             return contactsMap.get(contact);
         } while (!userContinue);
-
     }
 
     public static void initContacts(HashMap<String, Contact> contactsMap) {
-        System.out.println("Users in memory: ");
         System.out.println("\n");
+        System.out.println("Contacts:");
+//        System.out.println("\n");
         for (String key : contactsMap.keySet()) {
             System.out.println(key);
         }
-        System.out.println("\n");
     }
 
 

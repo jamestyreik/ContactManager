@@ -13,6 +13,7 @@ public class ManageContacts {
 
     //Prompts user to input firstName, lastName, and phoneNumber, then builds new Contact object
     public static Contact addContact() {
+        System.out.println("\n");
         System.out.println(ANSI_PURPLE
                 + "***********" + ANSI_RESET);
         System.out.println(ANSI_PURPLE
@@ -22,17 +23,20 @@ public class ManageContacts {
         String firstName = getString("Enter First Name: ");
         String lastName = getString("Enter Last Name: ");
         String phoneNumber = getString("Enter Phone Number: ");
+        System.out.println("\n");
 
         return new Contact(firstName, lastName, phoneNumber);
     }
 
     public static void removeContact(HashMap<String, Contact> contactsMap) {
+        System.out.println("\n");
        boolean userContinue;
         do {
            String key = getString("Which contact would you like to remove?").toUpperCase();
             if (contactsMap.containsKey(key)) {
                 contactsMap.remove(key);
                 System.out.println(key + " contact has been removed!");
+                System.out.println("\nContacts Updated!");
                 userContinue = true;
             } else {
                 System.out.println(key + " doesn't exist... Please try again");

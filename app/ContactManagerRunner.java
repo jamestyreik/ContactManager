@@ -44,15 +44,17 @@ public class ContactManagerRunner {
                 case 4:
                     initContacts(testMap);
                     removeContact(testMap);
-                    System.out.println("\nContacts Updated!\n");
                     initContacts(testMap);
                     userContinue = true;
                     break;
-                default:
-
-                    ReadWrite.tryWriteFile(Paths.get("data/contacts.json"), new ArrayList<>(testMap.values()));
+                case 5:
+                    tryWriteFile(Paths.get("data/contacts.json"), new ArrayList<>(testMap.values()));
                     printBender();
                     userContinue = false;
+                    break;
+                default:
+                    System.out.println("Please enter a valid selection");
+                    userContinue = true;
             }
         } while (userContinue);
 

@@ -12,7 +12,7 @@ public class TextEffects {
             char c = output.charAt(i);
             System.out.print(c);
             try {
-                TimeUnit.MILLISECONDS.sleep(5);
+                TimeUnit.MILLISECONDS.sleep(2);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
