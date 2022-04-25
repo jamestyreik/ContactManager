@@ -8,6 +8,8 @@ import java.util.*;
 import static consoleOut.DisplayContact.*;
 import static util.ManageContacts.addContact;
 import static util.ManageContacts.removeContact;
+import static util.TextEffects.*;
+
 
 public class ContactManagerRunner {
     public static void main(String[] args) {
@@ -25,7 +27,10 @@ public class ContactManagerRunner {
 //        removeContact(testMap);
 //
 //        initContacts(testMap);
-        convertHashMapToJson(testMap);
+//        convertHashMapToJson(testMap);
+//        printLogo();
+//        printLogo2();
+        printBender();
 
     }
 
