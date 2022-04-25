@@ -11,8 +11,6 @@ public class ManageContacts {
 
     //Prompts user to input firstName, lastName, and phoneNumber, then builds new Contact object
     public static Contact addContact() {
-        System.out.println("Would you like to create a new contact? (Y/N)");
-
         System.out.println(ANSI_PURPLE
                 + "***********" + ANSI_RESET);
         System.out.println(ANSI_PURPLE

@@ -6,6 +6,7 @@ import obj.Contact;
 import java.util.*;
 
 import static consoleOut.DisplayContact.*;
+import static consoleOut.Menu.displayMenu;
 import static util.ManageContacts.addContact;
 import static util.ManageContacts.removeContact;
 import static util.TextEffects.*;
@@ -13,27 +14,39 @@ import static util.TextEffects.*;
 
 public class ContactManagerRunner {
     public static void main(String[] args) {
-        printLogo2();
-        //Assigns hardcoded HashMap from getContacts to HashMap testMap
         HashMap<String, Contact> testMap = getContacts();
-//        //Takes in testMap and displays all keys (firstName and lastName)
-        initContacts(testMap);
-        //Preview contacts information
-        displayContact(searchUserContact(testMap));
-//        //Prompts user to enter firstName, lastName, and phoneNumber to create new Contact object (testContact)
-        Contact testContact = addContact();
-//        //Takes testMap and adds the testContact just made by the user
-        testMap.put(testContact.getFirstName().toUpperCase() + " " + testContact.getLastName().toUpperCase(), testContact);
-//        //Takes in testMap and displays all keys (firstName and lastName) including new user created contact
-        initContacts(testMap);
-
-        removeContact(testMap);
-
-        initContacts(testMap);
-        convertHashMapToJson(testMap);
-////        printLogo();
-//        printLogo2();
-        printBender();
+        printLogo2();
+        boolean userContinue;
+        do {
+            switch (displayMenu()) {
+                case 1:
+                    //Display Contacts
+                    initContacts(testMap);
+                    userContinue = true;
+                    break;
+                case 2:
+                    //Add Contact
+                    Contact newContact = addContact();
+                    testMap.put(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase(), newContact);
+                    userContinue = true;
+                    break;
+                case 3:
+                    initContacts(testMap);
+                    displayContact(searchUserContact(testMap));
+                    userContinue = true;
+                    break;
+                case 4:
+                    initContacts(testMap);
+                    removeContact(testMap);
+                    System.out.println("Contacts Updated!");
+                    initContacts(testMap);
+                    userContinue = true;
+                    break;
+                default:
+                    printBender();
+                    userContinue = false;
+            }
+        } while (userContinue);
 
     }
 

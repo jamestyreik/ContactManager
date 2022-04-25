@@ -9,7 +9,7 @@ public class Menu {
         System.out.println("1. View Contacts\n" +
                 "2. Add a new contact\n" +
                 "3. Search a contact by name\n" +
-                "4. Delete and existing contact\n" +
+                "4. Delete an existing contact\n" +
                 "5. Exit!");
 
         return getInt("Enter an option (1,2,3,4,5)");
