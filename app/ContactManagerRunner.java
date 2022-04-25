@@ -38,7 +38,7 @@ public class ContactManagerRunner {
                 case 4:
                     initContacts(testMap);
                     removeContact(testMap);
-                    System.out.println("Contacts Updated!");
+                    System.out.println("\nContacts Updated!\n");
                     initContacts(testMap);
                     userContinue = true;
                     break;

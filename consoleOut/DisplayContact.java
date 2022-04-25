@@ -18,9 +18,6 @@ public class DisplayContact {
 
     //Formats individual Contact object for console display
     public static void displayContact(Contact contact) {
-//        System.out.println("Name: " + contact.getFirstName() + " " + contact.getLastName());
-//        System.out.println("Phone: " + contact.getPhoneNumber());
-
         try{
             System.out.println("Name: " + contact.getFirstName() + " " + contact.getLastName());
             System.out.println("Phone: " + contact.getPhoneNumber());
@@ -54,6 +51,7 @@ public class DisplayContact {
         for (String key : contactsMap.keySet()) {
             System.out.println(key);
         }
+        System.out.println("\n");
     }
 
 
