@@ -1,12 +1,16 @@
 package app;
 
+import fileio.ReadWrite;
 import obj.Contact;
 
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 import static consoleOut.DisplayContact.*;
 import static consoleOut.Menu.displayMenu;
+import static fileio.ReadWrite.*;
 import static util.ManageContacts.addContact;
 import static util.ManageContacts.removeContact;
 import static util.TextEffects.*;
@@ -14,7 +18,9 @@ import static util.TextEffects.*;
 
 public class ContactManagerRunner {
     public static void main(String[] args) {
-        HashMap<String, Contact> testMap = getContacts();
+        //returns List
+        HashMap<String, Contact> testMap = contactsMapMaker(Paths.get("data/contacts.json"));
+//        HashMap<String, Contact> testMap = getContacts();
         printLogo2();
         boolean userContinue;
         do {
@@ -43,28 +49,13 @@ public class ContactManagerRunner {
                     userContinue = true;
                     break;
                 default:
+
+                    ReadWrite.tryWriteFile(Paths.get("data/contacts.json"), new ArrayList<>(testMap.values()));
                     printBender();
                     userContinue = false;
             }
         } while (userContinue);
 
-    }
-
-    public static void convertHashMapToJson(HashMap<String, Contact> contactsMap) {
-        Map<String, Contact> data = contactsMap;
-        List<HashMap<String, Contact>> list = new ArrayList<>();
-        list.add(contactsMap);
-        List<String> keyList = new ArrayList<>();
-        for (String key : contactsMap.keySet()) {
-            keyList.add(key);
-        }
-        for (int i = 0; i < keyList.size(); i++) {
-            String currentKey = keyList.get(i);
-            Contact currentContact = contactsMap.get(currentKey);
-            String first = currentContact.getFirstName();
-            String last = currentContact.getLastName();
-            String phone = currentContact.getPhoneNumber();
-        }
     }
 
     //Creates HashMap of Contacts as values and adds them with firstName and lastName as their keys

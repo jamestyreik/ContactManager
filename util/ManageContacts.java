@@ -9,6 +9,8 @@ import static util.Input.getString;
 
 public class ManageContacts {
 
+//    static HashMap<String, Contact> contactHashMap = new HashMap<>();
+
     //Prompts user to input firstName, lastName, and phoneNumber, then builds new Contact object
     public static Contact addContact() {
         System.out.println(ANSI_PURPLE
