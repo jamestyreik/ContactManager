@@ -13,22 +13,25 @@ import static util.TextEffects.*;
 
 public class ContactManagerRunner {
     public static void main(String[] args) {
+        printLogo2();
         //Assigns hardcoded HashMap from getContacts to HashMap testMap
         HashMap<String, Contact> testMap = getContacts();
 //        //Takes in testMap and displays all keys (firstName and lastName)
-//        initContacts(testMap);
+        initContacts(testMap);
+        //Preview contacts information
+        displayContact(searchUserContact(testMap));
 //        //Prompts user to enter firstName, lastName, and phoneNumber to create new Contact object (testContact)
-//        Contact testContact = addContact();
+        Contact testContact = addContact();
 //        //Takes testMap and adds the testContact just made by the user
-//        testMap.put(testContact.getFirstName().toUpperCase() + " " + testContact.getLastName().toUpperCase(), testContact);
+        testMap.put(testContact.getFirstName().toUpperCase() + " " + testContact.getLastName().toUpperCase(), testContact);
 //        //Takes in testMap and displays all keys (firstName and lastName) including new user created contact
-//        initContacts(testMap);
-//
-//        removeContact(testMap);
-//
-//        initContacts(testMap);
-//        convertHashMapToJson(testMap);
-//        printLogo();
+        initContacts(testMap);
+
+        removeContact(testMap);
+
+        initContacts(testMap);
+        convertHashMapToJson(testMap);
+////        printLogo();
 //        printLogo2();
         printBender();
 

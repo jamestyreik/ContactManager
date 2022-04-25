@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.concurrent.TimeUnit;
 
+import static consoleOut.DisplayContact.*;
+
 public class TextEffects {
     public static void slowPrint(String output) {
         for (int i = 0; i < output.length(); i++) {
@@ -28,7 +30,8 @@ public class TextEffects {
     }
 
     public static void printLogo2() {
-        slowPrint("\n" +
+        slowPrint(ANSI_GREEN
+                + "\n" +
                 "                                                                                                                                  \n" +
                 "    ,o888888o.        ,o888888o.     b.             8 8888888 8888888888   .8.           ,o888888o.8888888 8888888888 d888888o.   \n" +
                 "   8888     `88.   . 8888     `88.   888o.          8       8 8888        .888.         8888     `88.    8 8888     .`8888:' `88. \n" +
@@ -39,7 +42,8 @@ public class TextEffects {
                 "88 8888           88 8888        ,8P 8   `Y8o. `Y8888       8 8888   .8' `8. `88888. 88 8888             8 8888        `8.`8888.  \n" +
                 "`8 8888       .8' `8 8888       ,8P  8      `Y8o. `Y8       8 8888  .8'   `8. `88888.`8 8888       .8'   8 8888    8b   `8.`8888. \n" +
                 "   8888     ,88'   ` 8888     ,88'   8         `Y8o.`       8 8888 .888888888. `88888.  8888     ,88'    8 8888    `8b.  ;8.`8888 \n" +
-                "    `8888888P'        `8888888P'     8            `Yo       8 8888.8'       `8. `88888.  `8888888P'      8 8888     `Y8888P ,88P' \n");
+                "    `8888888P'        `8888888P'     8            `Yo       8 8888.8'       `8. `88888.  `8888888P'      8 8888     `Y8888P ,88P' \n" + ANSI_RESET +
+                "\n");
     }
 
     public static void printBender() {
@@ -50,16 +54,16 @@ public class TextEffects {
                 "                  ~Y5PP5?:              \n" +
                 "                 ^GGGGGGBJ              \n" +
                 "               :~JPPPPPPPY              \n" +
-                "              !:Y&GP##PGPY                     ______                ____                   \n" +
-                "              ^^!PP5PG5PPY                    / ____/___  ____  ____/ / /_  __  _____       \n" +
-                "    ?7           :JPP555PJ         .^:       / / __/ __ \\/ __ \\/ __  / __ \\/ / / / _ \\      \n" +
-                "  .?J5Y!.         7PP5P5PJ         :!~      / /_/ / /_/ / /_/ / /_/ / /_/ / /_/ /  __/      \n" +
-                " :~!7Y5P?      ^?5GGGGGGGBGY~      ^!!.     \\____/\\____/\\____/\\__,_/_.___/\\__, /\\___/       \n" +
-                " ::.^.!5~     ~PGGGGGGGGGGPP5^   :!!!7~        /  |/  /__  ____ _/ /_/ /_/____/ _____ ______\n" +
-                "      !57   .^J5PPPPPPP5GP555J.  ~J??77.      / /|_/ / _ \\/ __ `/ __/ __ \\/ __ `/ __ `/ ___/\n" +
-                "      .7YJ7??J!5GGGGGGP5GG5JYY^  .!7?77.     / /  / /  __/ /_/ / /_/ /_/ / /_/ / /_/ (__  ) \n" +
-                "        :^~~:. JGGGGGGP5GGGP~?Y7^7?!~!~     /_/  /_/\\___/\\__,_/\\__/_.___/\\__,_/\\__, /____/  \n" +
-                "               7GGGGG555GGG5  ^??J7:                                          /____/        \n" +
+                "              !:Y&GP##PGPY                "+ANSI_RED+"                ______                ____                   \n" + ANSI_RESET +
+                "              ^^!PP5PG5PPY                 "+ANSI_RED+"             / ____/___  ____  ____/ / /_  __  _____       \n" + ANSI_RESET +
+                "    ?7           :JPP555PJ         .^:    "+ANSI_RED+"             / / __/ __ \\/ __ \\/ __  / __ \\/ / / / _ \\      \n" + ANSI_RESET +
+                "  .?J5Y!.         7PP5P5PJ         :!~   "+ANSI_RED+"             / /_/ / /_/ / /_/ / /_/ / /_/ / /_/ /  __/      \n" + ANSI_RESET +
+                " :~!7Y5P?      ^?5GGGGGGGBGY~      ^!!.   "+ANSI_RED+"           \\____/\\____/\\____/\\__,_/_.___/\\__, /\\___/       \n" + ANSI_RESET +
+                " ::.^.!5~     ~PGGGGGGGGGGPP5^   :!!!7~    "+ANSI_RED+"             /  |/  /__  ____ _/ /_/ /_/____/ _____ ______\n" + ANSI_RESET +
+                "      !57   .^J5PPPPPPP5GP555J.  ~J??77.   "+ANSI_RED+"            / /|_/ / _ \\/ __ `/ __/ __ \\/ __ `/ __ `/ ___/\n" + ANSI_RESET +
+                "      .7YJ7??J!5GGGGGGP5GG5JYY^  .!7?77.  "+ANSI_RED+"            / /  / /  __/ /_/ / /_/ /_/ / /_/ / /_/ (__  ) \n" + ANSI_RESET +
+                "        :^~~:. JGGGGGGP5GGGP~?Y7^7?!~!~     "+ANSI_RED+"         /_/  /_/\\___/\\__,_/\\__/_.___/\\__,_/\\__, /____/  \n" + ANSI_RESET +
+                "               7GGGGG555GGG5  ^??J7:        "+ANSI_RED+"                                           /____/        \n" + ANSI_RESET +
                 "               ~GGGGGGP5GGG!            \n" +
                 "               :5PPGGGPPGGP.            \n" +
                 "                7YJ777J5Y7^             \n" +
