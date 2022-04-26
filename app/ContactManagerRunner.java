@@ -11,6 +11,7 @@ import java.util.*;
 import static consoleOut.DisplayContact.*;
 import static consoleOut.Menu.displayMenu;
 import static fileio.ReadWrite.*;
+import static util.Input.getString;
 import static util.ManageContacts.addContact;
 import static util.ManageContacts.removeContact;
 import static util.TextEffects.*;
@@ -38,8 +39,17 @@ public class ContactManagerRunner {
                     userContinue = true;
                     break;
                 case 3:
-                    initContacts(workingMap);
-                    displayContact(searchUserContact(workingMap));
+                    boolean continueChoice;
+                    do {
+                        initContacts(workingMap);
+                        displayContact(searchUserContact(workingMap));
+                        String willLoop = getString("Would you like to view another contact? (y/n)");
+                        if(willLoop.equalsIgnoreCase("y")) {
+                            continueChoice = true;
+                        } else {
+                            continueChoice = false;
+                        }
+                    } while (continueChoice);
                     userContinue = true;
                     break;
                 case 4:
@@ -54,6 +64,7 @@ public class ContactManagerRunner {
                     userContinue = false;
                     break;
                 default:
+                    System.out.println("\n");
                     System.out.println("Please enter a valid selection");
                     userContinue = true;
             }
