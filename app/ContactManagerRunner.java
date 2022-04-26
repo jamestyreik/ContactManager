@@ -18,8 +18,9 @@ import static util.TextEffects.*;
 
 public class ContactManagerRunner {
     public static void main(String[] args) {
-        //returns List
-        HashMap<String, Contact> testMap = contactsMapMaker(Paths.get("data/contacts.json"));
+        //New HashMap is created from json file
+        HashMap<String, Contact> workingMap = contactsMapMaker(Paths.get("data/contacts.json"));
+        //Initial HashMap used to populate json and used for testing prior to read/write capability
 //        HashMap<String, Contact> testMap = getContacts();
         printLogo2();
         boolean userContinue;
@@ -27,28 +28,28 @@ public class ContactManagerRunner {
             switch (displayMenu()) {
                 case 1:
                     //Display Contacts
-                    initContacts(testMap);
+                    initContacts(workingMap);
                     userContinue = true;
                     break;
                 case 2:
                     //Add Contact
                     Contact newContact = addContact();
-                    testMap.put(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase(), newContact);
+                    workingMap.put(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase(), newContact);
                     userContinue = true;
                     break;
                 case 3:
-                    initContacts(testMap);
-                    displayContact(searchUserContact(testMap));
+                    initContacts(workingMap);
+                    displayContact(searchUserContact(workingMap));
                     userContinue = true;
                     break;
                 case 4:
-                    initContacts(testMap);
-                    removeContact(testMap);
-                    initContacts(testMap);
+                    initContacts(workingMap);
+                    removeContact(workingMap);
+                    initContacts(workingMap);
                     userContinue = true;
                     break;
                 case 5:
-                    tryWriteFile(Paths.get("data/contacts.json"), new ArrayList<>(testMap.values()));
+                    tryWriteFile(Paths.get("data/contacts.json"), new ArrayList<>(workingMap.values()));
                     printBender();
                     userContinue = false;
                     break;
