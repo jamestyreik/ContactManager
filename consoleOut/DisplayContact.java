@@ -84,6 +84,8 @@ public class DisplayContact {
 
     public static void initContacts(HashMap<String, Contact> contactsMap) {
         System.out.println("\n");
+        System.out.println(ANSI_PURPLE
+                + "***************************************************" + ANSI_RESET);
         System.out.println(ANSI_YELLOW + "Contacts:" + ANSI_RESET);
 //        System.out.println("\n");
         for (String key : contactsMap.keySet()) {
