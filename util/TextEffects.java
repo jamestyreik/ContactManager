@@ -49,31 +49,32 @@ public class TextEffects {
     public static void printBender() {
         slowPrint(
                 "                     :~                 \n" +
-                "                     :!                 \n" +
-                "                     ~?.                \n" +
-                "                  ~Y5PP5?:              \n" +
-                "                 ^GGGGGGBJ              \n" +
-                "               :~JPPPPPPPY              \n" +
-                "              !:Y&GP##PGPY                "+ANSI_RED+"                ______                ____                   \n" + ANSI_RESET +
-                "              ^^!PP5PG5PPY                 "+ANSI_RED+"             / ____/___  ____  ____/ / /_  __  _____       \n" + ANSI_RESET +
-                "    ?7           :JPP555PJ         .^:    "+ANSI_RED+"             / / __/ __ \\/ __ \\/ __  / __ \\/ / / / _ \\      \n" + ANSI_RESET +
-                "  .?J5Y!.         7PP5P5PJ         :!~   "+ANSI_RED+"             / /_/ / /_/ / /_/ / /_/ / /_/ / /_/ /  __/      \n" + ANSI_RESET +
-                " :~!7Y5P?      ^?5GGGGGGGBGY~      ^!!.   "+ANSI_RED+"           \\____/\\____/\\____/\\__,_/_.___/\\__, /\\___/       \n" + ANSI_RESET +
-                " ::.^.!5~     ~PGGGGGGGGGGPP5^   :!!!7~    "+ANSI_RED+"             /  |/  /__  ____ _/ /_/ /_/____/ _____ ______\n" + ANSI_RESET +
-                "      !57   .^J5PPPPPPP5GP555J.  ~J??77.   "+ANSI_RED+"            / /|_/ / _ \\/ __ `/ __/ __ \\/ __ `/ __ `/ ___/\n" + ANSI_RESET +
-                "      .7YJ7??J!5GGGGGGP5GG5JYY^  .!7?77.  "+ANSI_RED+"            / /  / /  __/ /_/ / /_/ /_/ / /_/ / /_/ (__  ) \n" + ANSI_RESET +
-                "        :^~~:. JGGGGGGP5GGGP~?Y7^7?!~!~     "+ANSI_RED+"         /_/  /_/\\___/\\__,_/\\__/_.___/\\__,_/\\__, /____/  \n" + ANSI_RESET +
-                "               7GGGGG555GGG5  ^??J7:        "+ANSI_RED+"                                           /____/        \n" + ANSI_RESET +
-                "               ~GGGGGGP5GGG!            \n" +
-                "               :5PPGGGPPGGP.            \n" +
-                "                7YJ777J5Y7^             \n" +
-                "               7YJ:  ^JY~               \n" +
-                "              !5Y^  .J5?                \n" +
-                "             .JY?   :YY~                \n" +
-                "              ?YJ.  .J57                \n" +
-                "              ^YY~   ^YY^               \n" +
-                "              ~Y5Y?!. ^JY~.             \n" +
-                "             7GGGGGG?^Y55PPY^           ");
+                        "                     :!                 \n" +
+                        "                     ~?.                \n" +
+                        "                  ~Y5PP5?:              \n" +
+                        "                 ^GGGGGGBJ              \n" +
+                        "               :~JPPPPPPPY              \n" +
+                        "              !:Y&GP##PGPY                "+ANSI_RED+ " ██████╗  ██████╗  ██████╗ ██████╗ ██████╗ ██╗   ██╗███████╗         \n" + ANSI_RESET +
+                        "              ^^!PP5PG5PPY                 "+ANSI_RED+ "██╔════╝ ██╔═══██╗██╔═══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝██╔════╝         \n" + ANSI_RESET +
+                        "    ?7           :JPP555PJ         .^:    "+ANSI_RED+ " ██║  ███╗██║   ██║██║   ██║██║  ██║██████╔╝ ╚████╔╝ █████╗           \n" + ANSI_RESET +
+                        "  .?J5Y!.         7PP5P5PJ         :!~   "+ANSI_RED+ "  ██║   ██║██║   ██║██║   ██║██║  ██║██╔══██╗  ╚██╔╝  ██╔══╝           \n" + ANSI_RESET +
+                        " :~!7Y5P?      ^?5GGGGGGGBGY~      ^!!.   "+ANSI_RED+ "╚██████╔╝╚██████╔╝╚██████╔╝██████╔╝██████╔╝   ██║   ███████╗         \n" + ANSI_RESET +
+                        " ::.^.!5~     ~PGGGGGGGGGGPP5^   :!!!7~    "+ANSI_RED+ " ╚═════╝  ╚═════╝  ╚═════╝ ╚═════╝ ╚═════╝    ╚═╝   ╚══════╝         \n" + ANSI_RESET +
+                        "      !57   .^J5PPPPPPP5GP555J.  ~J??77.   "+ANSI_RED+ "                                                                     \n" + ANSI_RESET +
+                        "      .7YJ7??J!5GGGGGGP5GG5JYY^  .!7?77.  "+ANSI_RED+ "   ███╗   ███╗███████╗ █████╗ ████████╗██████╗  █████╗  ██████╗ ███████╗\n" + ANSI_RESET +
+                        "        :^~~:. JGGGGGGP5GGGP~?Y7^7?!~!~     "+ANSI_RED+ " ████╗ ████║██╔════╝██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔════╝ ██╔════╝\n" + ANSI_RESET +
+                        "               7GGGGG555GGG5  ^??J7:        "+ANSI_RED+ " ██╔████╔██║█████╗  ███████║   ██║   ██████╔╝███████║██║  ███╗███████╗\n" + ANSI_RESET +
+                        "               ~GGGGGGP5GGG!            " +ANSI_RED+ "     ██║╚██╔╝██║██╔══╝  ██╔══██║   ██║   ██╔══██╗██╔══██║██║   ██║╚════██║\n" + ANSI_RESET +
+                        "               :5PPGGGPPGGP.            " +ANSI_RED+ "     ██║ ╚═╝ ██║███████╗██║  ██║   ██║   ██████╔╝██║  ██║╚██████╔╝███████║\n" + ANSI_RESET +
+                        "                7YJ777J5Y7^             " +ANSI_RED+ "     ╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝\n" + ANSI_RESET +
+                        "               7YJ:  ^JY~               \n" +
+                        "              !5Y^  .J5?                \n" +
+                        "             .JY?   :YY~                \n" +
+                        "              ?YJ.  .J57                \n" +
+                        "              ^YY~   ^YY^               \n" +
+                        "              ~Y5Y?!. ^JY~.             \n" +
+                        "             7GGGGGG?^Y55PPY^           ");
+
     }
 
 
