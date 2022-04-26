@@ -22,7 +22,7 @@ public class ManageContacts {
                 + "***********" + ANSI_RESET);
         String firstName = getString("Enter First Name: ");
         String lastName = getString("Enter Last Name: ");
-        String phoneNumber = getString("Enter Phone Number: ");
+        String phoneNumber = getString("Enter Phone Number (no dashes or spaces): ");
         System.out.println("\n");
 
         return new Contact(firstName, lastName, phoneNumber);
