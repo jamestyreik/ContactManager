@@ -35,7 +35,16 @@ public class ContactManagerRunner {
                 case 2:
                     //Add Contact
                     Contact newContact = addContact();
-                    workingMap.put(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase(), newContact);
+                    if(workingMap.containsKey(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase())) {
+                        String wantToContinue = getString("Do you want to overwrite the existing contact for " +
+                                newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase() + " (y/n)");
+                        if(wantToContinue.equalsIgnoreCase("y")) {
+                            workingMap.remove(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase());
+                            workingMap.put(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase(), newContact);
+                        }
+                    } else {
+                        workingMap.put(newContact.getFirstName().toUpperCase() + " " + newContact.getLastName().toUpperCase(), newContact);
+                    }
                     userContinue = true;
                     break;
                 case 3:
