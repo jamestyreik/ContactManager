@@ -30,16 +30,16 @@ public class ManageContacts {
 
     public static void removeContact(HashMap<String, Contact> contactsMap) {
         System.out.println("\n");
-       boolean userContinue;
+        boolean userContinue;
         do {
-           String key = getString("Which contact would you like to remove?").toUpperCase();
+            String key = getString(ANSI_YELLOW + "Which contact would you like to remove?" + ANSI_RESET).toUpperCase();
             if (contactsMap.containsKey(key)) {
                 contactsMap.remove(key);
-                System.out.println(key + " contact has been removed!");
-                System.out.println("\nContacts Updated!");
+                System.out.println(key + ANSI_YELLOW + "\ncontact has been removed!" + ANSI_RESET);
+                System.out.println(ANSI_GREEN + "\nContacts Updated!" + ANSI_RESET);
                 userContinue = true;
             } else {
-                System.out.println(key + " doesn't exist... Please try again");
+                System.out.println(key + ANSI_RED + "\n doesn't exist... Please try again" + ANSI_RESET);
                 userContinue = false;
             }
         } while (!userContinue);
